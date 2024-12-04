@@ -1,0 +1,22 @@
+import pandas as pd
+
+# Load the dataset
+from sklearn.datasets import load_iris
+iris = load_iris()
+
+# Convert to a pandas DataFrame
+df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
+df['species'] = iris.target
+
+# Display the first few rows
+print("First few rows of the dataset:")
+print(df.head())
+
+# Check the data types and for any missing values
+print("\nData types and missing values:")
+print(df.info())
+print("\nMissing values in each column:")
+print(df.isnull().sum())
+
+# Clean the dataset (if necessary)
+# For this example, the dataset is already clean
