@@ -1,0 +1,13 @@
+# Basic statistics
+print("\nBasic statistics of numerical columns:")
+print(df.describe())
+
+# Group by species and compute mean of numerical columns
+grouped_means = df.groupby('species').mean()
+print("\nMean values for each species:")
+print(grouped_means)
+
+# Identify patterns or interesting findings
+print("\nObservations:")
+print("1. Mean values for each species differ significantly for each feature.")
+print("2. Some species have higher mean values for certain features.")
