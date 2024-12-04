@@ -1,0 +1,35 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Line chart showing trends over time (hypothetical time-series data for demonstration)
+df['index'] = pd.date_range(start='1/1/2022', periods=len(df), freq='D')
+plt.figure(figsize=(10, 5))
+plt.plot(df['index'], df['sepal length (cm)'])
+plt.title('Trend of Sepal Length Over Time')
+plt.xlabel('Time')
+plt.ylabel('Sepal Length (cm)')
+plt.show()
+
+# Bar chart showing comparison of a numerical value across categories
+plt.figure(figsize=(10, 5))
+sns.barplot(x='species', y='petal length (cm)', data=df)
+plt.title('Average Petal Length per Species')
+plt.xlabel('Species')
+plt.ylabel('Petal Length (cm)')
+plt.show()
+
+# Histogram of a numerical column
+plt.figure(figsize=(10, 5))
+plt.hist(df['sepal width (cm)'], bins=20)
+plt.title('Distribution of Sepal Width')
+plt.xlabel('Sepal Width (cm)')
+plt.ylabel('Frequency')
+plt.show()
+
+# Scatter plot to visualize relationship between two numerical columns
+plt.figure(figsize=(10, 5))
+plt.scatter(df['sepal length (cm)'], df['petal length (cm)'])
+plt.title('Sepal Length vs Petal Length')
+plt.xlabel('Sepal Length (cm)')
+plt.ylabel('Petal Length (cm)')
+plt.show()
